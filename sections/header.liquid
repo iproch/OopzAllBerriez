@@ -22,7 +22,168 @@
       max-width: {{ section.settings.logo_max_width }}px;
     }
   {%- endif -%}
+  
+  
+  
+  #header-logo {
+    transition: all 250ms ease-in-out;
+
+    -webkit-animation: fadeinOut 5s infinite; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadeinOut 5s infinite; /* Firefox < 16 */
+        -ms-animation: fadeinOut 5s infinite; /* Internet Explorer */
+         -o-animation: fadeinOut 5s infinite; /* Opera < 12.1 */
+            animation: fadeinOut 5s infinite;
+}
+  
+  #shopify-section-16244856434ae3d32c{
+    transition: all 250ms ease-in-out;
+    /*display:none;*/
+    {% comment %}
+    -webkit-animation: fadein 8s; /* Safari, Chrome and Opera > 12.1 */
+       -moz-animation: fadein 8s; /* Firefox < 16 */
+        -ms-animation: fadein 8s; /* Internet Explorer */
+         -o-animation: fadein 8s; /* Opera < 12.1 */
+            animation: fadein 8s;
+    
+    {% endcomment %}
+  }
+
+@keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+}
+  
+  @keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    0% { opacity: 0; visibility:hidden; }
+    50% {opacity: 1; visibility:visible;}
+    100%   { opacity: 0; visibility:hidden;}
+}
+  
+  /**/
+  
+@keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+  
+  @keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadeinOut {
+    0% {opacity:0;}
+  50%{opacity:1;}
+  100% {opacity:1;}
+}
 </style>
+
+<script>
+$( document ).ready(function() {
+  $('#header-logo').animate({marginTop: '+=100px'});
+       $("#shopify-section-16244856434ae3d32c").hide();
+    });
+  
+  
+ 
+    $( window ).on( "load", function() {
+      $('#header-logo').animate({marginTop: '-=100px'});
+      
+      $("#shopify-section-16244856434ae3d32c").show();
+      
+      $("#shopify-section-16244856434ae3d32c").delay(13500).fadeOut();
+     
+      
+    });
+  
+</script>
 
 {%- if banner_enabled -%}
   {%- for block in section.blocks -%}
@@ -177,7 +338,7 @@
           </div>
           <div class="header-table__center align--middle text-align--center flex--grow--1  md--dn--flex--1-basis-auto lg--up--flex--grow--0 lg--justify--center lg--items--center">
             {% if template.name == 'index' %}
-              <h1 class="header__logo m0 lg--up--px3 {% if section.settings.logo != blank %}font-size--0{% endif %} md--dn--px1">
+              <h1 id="header-logo" class="header__logo m0 lg--up--px3 {% if section.settings.logo != blank %}font-size--0{% endif %} md--dn--px1">
             {% else %}
               <div class="header__logo {% unless section.settings.logo != blank %}h1{% else %}font-size--0{% endunless %} m0  lg--up--px3 md--dn--px1">
             {% endif %}
@@ -373,7 +534,7 @@
 
         {% assign section_color = block.settings.overlay_text_color %}
         {% if block.settings.image %}
-        <div class="banner  relative {% unless block.settings.image_style == 'fit_content' %}full--vh full--w{% endunless %} js banner_image full--w" data-banner-image>
+        <div  class="banner  relative {% unless block.settings.image_style == 'fit_content' %}full--vh full--w{% endunless %} js banner_image full--w" data-banner-image>
 
           {% assign feature_image = block.settings.image %}
           {% assign feature_image_mobile = block.settings.image_mobile %}

@@ -270,7 +270,10 @@
         <div class="footer__credit mt--auto">
           <p class="mb1">&copy; {{ 'now' | date: "%Y" }} <a href="{{ routes.root_url }}" class=" color--{{ section_color }}-text">{{ shop.name }}</a></p>
           <p class="font-size--xs powered-by mb0 color--{{ section_color }}-text powered_by_link">
+            {% comment %}
             {{ powered_by_link }}
+            {% endcomment %}
+            Powered by <a href="https://www.digitalderez.com/">Digital Derez</a>
           </p>
         </div>
       </div>

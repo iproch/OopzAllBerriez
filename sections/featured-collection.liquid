@@ -68,7 +68,7 @@
         <div class="mobile-flickity relative {% unless mobile_flickity %}md--dn--px2{% endunless %}">
           <div class="mobile-flickity__slides pb3 {% if mobile_flickity == false and no_product_modulo == 0 %}grid grid--uniform sm--grid--half-gutter{% endif %} lg--up--grid grid--uniform {% unless mobile_flickity %}mtn3{% endunless %} lg--up--mtn3">
             {% for product in collection.products limit: section.settings.no_products %}
-              <div class="product-grid-item {{ extra_grid_class }} {% if mobile_flickity %}nine-twelfths md--six-twelfths{% else %}mt3{% endif %} lg--up--grid__item {{ grid_item_width }} lg--up--mt3">
+              <div id="featured-elem" class="product-grid-item {{ extra_grid_class }} {% if mobile_flickity %}nine-twelfths md--six-twelfths{% else %}mt3{% endif %} lg--up--grid__item {{ grid_item_width }} lg--up--mt3">
                 {% if mobile_flickity %}
                 <div class="px2 lg--up--px0">
                 {% endif %}
@@ -82,7 +82,7 @@
               </div>
             {% else %}
               {% for i in (1..section.settings.no_products) %}
-              <div class="product-grid-item {{ extra_grid_class }} {% if mobile_flickity %}nine-twelfths md--six-twelfths{% else %}mt3{% endif %} l lg--up--grid__item {{ grid_item_width }} lg--up--mt3">
+              <div id="featured-elem" class="product-grid-item {{ extra_grid_class }} {% if mobile_flickity %}nine-twelfths md--six-twelfths{% else %}mt3{% endif %} l lg--up--grid__item {{ grid_item_width }} lg--up--mt3">
                 {% if mobile_flickity %}
                 <div class="px2 lg--up--px0">
                 {% endif %}

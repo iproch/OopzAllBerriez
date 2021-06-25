@@ -1,1 +1,36 @@
 {{ content_for_index }}
+
+<style>
+  
+  
+  #abduction-elem{
+  background-image:url("https://cdn.shopify.com/s/files/1/0540/5160/2607/files/abduction-design_15x_0fa536c9-7403-47a9-af1d-2086e6c06db7.png?v=1624570656");
+    background-size:contain;
+    background-repeat:no-repeat;
+  background-position:right;
+  }
+  
+  #featured-elem{
+   width:50%; 
+  }
+  /*
+  #abduction-elem:nth-child(2){
+   background-position:right !important; 
+  }
+*/
+</style>
+
+<script>
+  
+  /*
+  
+  $( "body" ).find( "div" ).eq( 2 ).addClass( "blue" );
+  
+  $("[id=test]:eq(1)").css("background-color","blue");
+  
+  */
+  $("[id=abduction-elem]:eq(0)").css("text-shadow","1px 1px 2px black");
+  $("[id=abduction-elem]:eq(1)").css("background-image","none");
+	
+  console.log(elem);
+</script>
